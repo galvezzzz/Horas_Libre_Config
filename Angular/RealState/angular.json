@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TutorialShop": {
+    "RealState": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tutorial-shop",
+            "outputPath": "dist/real-state",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TutorialShop:build:production"
+              "buildTarget": "RealState:build:production"
             },
             "development": {
-              "buildTarget": "TutorialShop:build:development"
+              "buildTarget": "RealState:build:development"
             }
           },
           "defaultConfiguration": "development"
