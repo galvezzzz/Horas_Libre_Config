@@ -15,7 +15,7 @@ export class HousingService {
     return this.housingLocationList.find(housingLocation => housingLocation.id === id);
   }
 
-readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
+  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
 housingLocationList: HousingLocation[] = [
     {
