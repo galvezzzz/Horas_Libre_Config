@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos</title>
+</head>
+<body>
+    <div>
+        <h1>Alumnos</h1>
+        <table id ="tabla">
+            <thead>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Curso</th>
+                <th>Contacto</th>
+                <th>Fecha de matriculación</th>
+            </thead>
+            <tbody class="body">
+                
+            </tbody>
+        </table>
+        <button id="btnEstudiantes">Mostrar estudiantes</button>
+        <div id="resultadoEstudiantes"></div>
+
+        <p>Filtrar por: </p>
+        <div id="select">
+        <select>
+            <option value="">Nombre</option>
+            <option value="">Edad</option>
+            <option value="">Curso</option>
+        </select>
+        </div>
+        <div>
+            <h2>Alumnos</h2>
+            <button id="nuevoAlumno">Alumno nuevo</button>
+        </div>
+        <div>
+            <h2>Formulario de Alumno</h2>
+            <div>
+                <form id="formAlumno">
+                    <div>
+                        <p>
+                            Nombre: 
+                            <input type="text" placeholder="Nombre" id="nombreInput" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Edad: 
+                            <input type="number" placeholder="Edad" id="edadInput" min="1" max="60" required>
+                        </p>  
+                    </div>
+                    <div>
+                        <p>
+                            Curso:
+                            <select id="cursoInput">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Email: 
+                            <input type="text" placeholder="Email" id="emailInput" min="1" required>
+                        </p>  
+                    </div>
+                    <div>
+                        <p>
+                            Teléfono: 
+                            <input type="number" placeholder="Teléfono" id="telefonoInput" min="1" required>
+                        </p>  
+                    </div>
+                    <div>
+                        <p>
+                            Fecha de matriculación: 
+                            <input type="datetime-local" id="fechaInput" required>
+                        </p>  
+                    </div>
+                    <button type="button" id="guardarAlumno">Insertar</button>
+                    <button type="button" id="resetearAlumno">Resetear</button>
+                    <div id="infoEstudiantes"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
