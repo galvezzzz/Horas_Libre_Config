@@ -1,5 +1,3 @@
-
-
 let tabla = "";
 
 for(let i = 0; i < libros.length; i++){
@@ -21,6 +19,7 @@ lista.innerHTML = tabla;
 
 window.onload = function(){
     document.querySelector("#btnGeneros").addEventListener("click", getGeneros);
+    document.querySelector("#btnAutores").addEventListener("click", getAutores);
     
 }
 
@@ -38,6 +37,10 @@ function getGeneros(){
 
 function getAutores(){
     let conjuntoAutores = new Set();
+    let autores = "";
 
-    libros.forEach(b=> b.autor);
+    libros.forEach(b=> conjuntoAutores.add(b.autor));
+
+    conjuntoAutores.forEach(a=> autores += `${a}<br>`);
+    document.querySelector("#autores").innerHTML = autores;
 }
