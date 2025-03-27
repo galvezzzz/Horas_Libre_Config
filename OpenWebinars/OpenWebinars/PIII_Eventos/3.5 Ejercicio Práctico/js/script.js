@@ -1,10 +1,4 @@
 
-window.onload = function() {
-    cambiarImagen();
-    cambiarBordes();
-    cambiarZoom();
-
-}
 
 function cambiarImagen(){
     //Añadimos el click listeners a las imágenes
@@ -50,3 +44,49 @@ let cambiarZoom = () => {
         img.style.height=(dim-50)+"px";
     });
 }
+
+let sumaAngulo= 0;
+let images = document.querySelector("#picture img");
+
+let rotarIzquierda = () => {
+    console.log("entra")
+    sumaAngulo -= 90
+    images.style.transform = `rotate(${sumaAngulo}deg)`;
+}
+
+let rotarDerecha = ()=>{
+    console.log("entra")
+    sumaAngulo += 90
+    images.style.transform = `rotate(${sumaAngulo}deg)`;
+}
+
+let restablecer = () =>{
+    images.style.width = "200px" ;
+    images.style.height = "200px";
+    images.style.transform = `rotate(${0}deg)`;
+}
+
+let colorElegido = document.getElementById("colorFondo");
+
+let cambiarFondo = () =>{
+    document.querySelector("#picture").style.backgroundColor = colorElegido.value;
+    //document.body.style.backgroundColor = colorElegido.value;
+}
+
+
+
+window.onload = function() {
+    cambiarImagen();
+    cambiarBordes();
+    cambiarZoom();
+    document.getElementById("rIzq").addEventListener("click", rotarIzquierda);
+    document.getElementById("rDcha").addEventListener("click", rotarDerecha);
+    document.getElementById("restablecer").addEventListener("click", restablecer);
+    document.getElementById("colorFondo").addEventListener("input", cambiarFondo);
+}
+
+
+
+
+
+
