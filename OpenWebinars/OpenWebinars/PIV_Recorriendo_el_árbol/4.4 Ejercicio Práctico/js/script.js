@@ -70,8 +70,22 @@ function saliendo(e) {
      }
 }
 
+function sumar(e){
+    console.log("click")
+    let suma;
+
+    if(e.target.innerHTML === ""){
+        e.target.innerHTML = "1";
+       
+    }else{
+        suma = Number(e.target.innerHTML) + 1;
+        e.target.innerHTML = suma;
+    }
+}
+
 //Establecemos los ma
 celdas.forEach( item =>  {
     item.addEventListener('mouseenter',entrando);
     item.addEventListener('mouseleave',saliendo);
+    item.addEventListener("click", sumar)
 })
