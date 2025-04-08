@@ -71,6 +71,7 @@ tasks.forEach( element => {
     element.addEventListener("dragstart", event => {
         event.dataTransfer.setData("name",event.target.children[0].textContent);
         event.target.setAttribute("id","draggable");
+        console.log("drag start");
     });
     
 });
