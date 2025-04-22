@@ -1,7 +1,7 @@
 window.onload = function(){
     document.querySelector("#btnMostrar").addEventListener("click", mostrarEstudiantes);
     document.getElementById("btnBuscar").addEventListener("click", seleccionarFiltro);
-
+    document.querySelector("#btnAnyadirAlumno").addEventListener("click", anyadirAlumno);
     
 }
 
@@ -79,3 +79,38 @@ function filtrarPorCurso(){
         }
     })
 }
+function anyadirAlumno() {
+    let nombreAlumno = document.querySelector("#nombreAlumno").value;
+    let edadAlumno = parseInt(document.querySelector("#edadAlumno").value);
+    let cursoAlumno = parseInt(document.querySelector("#cursoAlumno").value);
+    let emailAlumno = document.querySelector("#emailAlumno").value;
+    let telefonoAlumno = document.querySelector("#telefonoAlumno").value;
+    let fechaAlumno = document.querySelector("#fechaAlumno").value;
+
+    let nuevoAlumno = {
+        nombre: nombreAlumno,
+        edad: edadAlumno,
+        curso: cursoAlumno,
+        contacto: {
+            email: emailAlumno,
+            telefono: telefonoAlumno
+        },
+        fecha: fechaAlumno
+    };
+
+    arrayEstudiantes.push(nuevoAlumno);
+    console.log("Alumno añadido:", nuevoAlumno);
+
+    arrayEstudiantes.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+    mostrarEstudiantes();
+
+    document.querySelector("#nombreAlumno").value = "";
+    document.querySelector("#edadAlumno").value = "";
+    document.querySelector("#cursoAlumno").value = "";
+    document.querySelector("#emailAlumno").value = "";
+    document.querySelector("#telefonoAlumno").value = "";
+    document.querySelector("#fechaAlumno").value = "";
+
+}
+
