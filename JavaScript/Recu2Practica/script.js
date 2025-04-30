@@ -3,11 +3,22 @@ window.onload = function(){
 }
 
 function cargarTabla(){
-	animals.forEach(e => {
-		let nombre = e.name;
-		let especie = e.species;
-		let gustos = e.foods.likes;
-		let noGustos = e.foods.dislikes;
-		document.querySelector("#tablaAnimales").innerHTML = "<tr><td>" + nombre + "</td><td>" + especie + "</td><td>" + gustos + "</td><td>" + noGustos + "</td><td></tr>";
+    let tabla = document.querySelector("#tabla");
+    let nuevo = "";
+
+	animals.forEach((e, index) => {
+		nuevo += `<tr id="row${index}">
+		<td>${e.name}</td>
+		<td>${e.species}</td>
+		<td>${e.foods.likes}</td>
+		<td>${e.foods.dislikes}</td>
+		<td><button id="btnEditar">Editar</button></td>
+		</tr>`
 	});
+
+	tabla.innerHTML += nuevo;
+}
+
+function destacarFila(){
+	let btnSeleccionado = document.querySelector("#btnEditar");
 }
