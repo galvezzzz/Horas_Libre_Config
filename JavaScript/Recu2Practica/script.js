@@ -98,15 +98,38 @@ function btnGuardar(e) {
 		console.log(sexo);
 
 		// Comprobar peso
-		const peso = document.querySelector("#peso");
+		peso = document.querySelector("#peso");
 		let value = e.target.value;
 
-		// Comprobar que tenga al menos 1 revisión
+		// Comprobar revisión
+		let oidos = document.querySelector("#oidos");
+		let nariz = document.querySelector("#nariz");
+		let boca = document.querySelector("#boca");
+		let ojos = document.querySelector("#ojos");
 
+		if (!oidos.checked && !nariz.checked && !boca.checked && !ojos.checked) {
+			alert("Debes seleccionar al menos una revisión.");
+		} else {
+			// Comprobar diagnóstico
+			info = document.querySelector("#textarea");
+			if (textarea.value === "") {
+				alert("Ingresa un diagnóstico.");
+			} else {
+				// Guardamos los datos y poblamos el JSON
+				let nombre = document.querySelector("#inputNombre");
+				let index = animals.findIndex(animal => animal.name === nombre.value);
 
-		// Comprobar diagnóstico
+				if (breed.length != 0 && sex != "" && weight != "" && diagnostic.length != 0 && revision.length != 0) {
+					animals[index].raza = breed;
+					animals[index].sexo = sex;
+					animals[index].peso = weight;
+					animals[index].diagnostico = diagnostic;
+					animals[index].revision = revision;
+				}
 
-		actualizarJson(index)
+				actualizarJson(index);
+			}
+		}
 	} else {
 		alert("Selecciona un animal.");
 	}
@@ -118,11 +141,11 @@ document.getElementById("peso").addEventListener("input", function (e) {
 
 	// Eliminar todo lo que no sea dígito
 	value = value.replace(/\D/g, "");
-  
+
 	// Insertar el punto automáticamente después de los primeros dos dígitos
 	if (value.length >= 3) {
-	  value = value.slice(0, 2) + '.' + value.slice(2, 4);
-	} 
-  
+		value = value.slice(0, 2) + '.' + value.slice(2, 4);
+	}
+
 	e.target.value = value;
 });
