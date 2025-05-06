@@ -70,8 +70,9 @@ function actualizarJson(index) {
 }
 
 function btnGuardar(e) {
+	e.preventDefault();
 
-	let raza, sexo, peso, info;
+	let raza, sexo, peso, diagnostico, revision1, revision2;
 
 	// Comprobar selección
 	let nombre = document.querySelector("#inputNombre");
@@ -83,14 +84,9 @@ function btnGuardar(e) {
 		console.log(raza);
 
 		// Comprobar sexo
-		const macho = document.querySelector("#macho");
-		const hembra = document.querySelector("#hembra")
+		sexo = form.elements["sexo"].value;
 
-		if (macho.checked) {
-			sexo = macho.value;
-		} else if (hembra.checked) {
-			sexo = hembra.value;
-		} else {
+		if (sexo === "") {
 			alert("Debe seleccionar sexo.")
 			return;
 		}
@@ -99,7 +95,14 @@ function btnGuardar(e) {
 
 		// Comprobar peso
 		peso = document.querySelector("#peso");
-		let value = e.target.value;
+
+		if (peso.length > 0 && peso.length < 5) {
+			alert("Debe introducir el peso completo (NN.NN).")
+			return;
+		} else if (peso.length == 0) {
+			alert("Ingresa el peso (NN.NN).")
+			return;
+		}
 
 		// Comprobar revisión
 		let oidos = document.querySelector("#oidos");
@@ -111,7 +114,7 @@ function btnGuardar(e) {
 			alert("Debes seleccionar al menos una revisión.");
 		} else {
 			// Comprobar diagnóstico
-			info = document.querySelector("#textarea");
+			diagnostico = document.querySelector("#textarea");
 			if (textarea.value === "") {
 				alert("Ingresa un diagnóstico.");
 			} else {
@@ -119,11 +122,11 @@ function btnGuardar(e) {
 				let nombre = document.querySelector("#inputNombre");
 				let index = animals.findIndex(animal => animal.name === nombre.value);
 
-				if (breed.length != 0 && sex != "" && weight != "" && diagnostic.length != 0 && revision.length != 0) {
-					animals[index].raza = breed;
-					animals[index].sexo = sex;
-					animals[index].peso = weight;
-					animals[index].diagnostico = diagnostic;
+				if (raza.length != 0 && sexo != "" && peso != "" && diagnostico.length != 0 && revision.length != 0) {
+					animals[index].raza = raza;
+					animals[index].sexo = sexo;
+					animals[index].peso = peso;
+					animals[index].diagnostico = diagnostico;
 					animals[index].revision = revision;
 				}
 
