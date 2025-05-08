@@ -72,7 +72,14 @@ function actualizarJson(index) {
 function btnGuardar(e) {
 	e.preventDefault();
 
-	let raza, sexo, peso, diagnostico, revision1, revision2;
+	let raza, sexo, peso, diagnostico, revision1 = [];
+
+	const revision2 = {
+		oidos: document.getElementById("oidos2").checked ? "Sí" : "No",
+		nariz: document.getElementById("nariz2").checked ? "Sí" : "No",
+		boca: document.getElementById("boca2").checked ? "Sí" : "No",
+		ojos: document.getElementById("ojos2").checked ? "Sí" : "No"
+	  };
 
 	// Comprobar selección
 	let nombre = document.querySelector("#inputNombre");
@@ -81,7 +88,6 @@ function btnGuardar(e) {
 		// Comprobar raza
 		const select = document.querySelector("#select");
 		raza = select.value;
-		console.log(raza);
 
 		// Comprobar sexo
 		sexo = form.elements["sexo"].value;
@@ -91,10 +97,9 @@ function btnGuardar(e) {
 			return;
 		}
 
-		console.log(sexo);
 
 		// Comprobar peso
-		peso = document.querySelector("#peso");
+		peso = document.querySelector("#peso").value;
 
 		if (peso.length > 0 && peso.length < 5) {
 			alert("Debe introducir el peso completo (NN.NN).")
@@ -103,6 +108,7 @@ function btnGuardar(e) {
 			alert("Ingresa el peso (NN.NN).")
 			return;
 		}
+		console.log(peso);
 
 		// Comprobar revisión
 		let oidos = document.querySelector("#oidos");
@@ -113,8 +119,15 @@ function btnGuardar(e) {
 		if (!oidos.checked && !nariz.checked && !boca.checked && !ojos.checked) {
 			alert("Debes seleccionar al menos una revisión.");
 		} else {
+			// Revisión 1
+			const rev = document.querySelectorAll('input[name="revision1"]:checked');
+
+			rev.forEach(e => {
+				revision1.push(e.value);
+			});
+
 			// Comprobar diagnóstico
-			diagnostico = document.querySelector("#textarea");
+			diagnostico = document.querySelector("#textarea").value;
 			if (textarea.value === "") {
 				alert("Ingresa un diagnóstico.");
 			} else {
@@ -122,12 +135,12 @@ function btnGuardar(e) {
 				let nombre = document.querySelector("#inputNombre");
 				let index = animals.findIndex(animal => animal.name === nombre.value);
 
-				if (raza.length != 0 && sexo != "" && peso != "" && diagnostico.length != 0 && revision.length != 0) {
+				if (raza.length != 0 && sexo != "" && peso != "" && diagnostico.length != 0 && revision2.length != 0) {
 					animals[index].raza = raza;
 					animals[index].sexo = sexo;
 					animals[index].peso = peso;
 					animals[index].diagnostico = diagnostico;
-					animals[index].revision = revision;
+					animals[index].revision2 = revision2;
 				}
 
 				actualizarJson(index);
