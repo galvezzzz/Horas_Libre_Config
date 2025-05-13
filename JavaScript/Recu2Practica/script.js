@@ -59,6 +59,15 @@ function btnEditar(index) {
 		`
 	};
 
+	// Revisión 1
+	animals[index].
+
+	// Revisión 2
+	document.getElementById("oidos2").checked = animals[index].revision2.oidos === "Sí";
+	document.getElementById("nariz2").checked = animals[index].revision2.nariz === "Sí";
+	document.getElementById("boca2").checked = animals[index].revision2.boca === "Sí";
+	document.getElementById("ojos2").checked = animals[index].revision2.ojos === "Sí";
+
 	actualizarJson(index);
 
 }
@@ -79,7 +88,7 @@ function btnGuardar(e) {
 		nariz: document.getElementById("nariz2").checked ? "Sí" : "No",
 		boca: document.getElementById("boca2").checked ? "Sí" : "No",
 		ojos: document.getElementById("ojos2").checked ? "Sí" : "No"
-	  };
+	};
 
 	// Comprobar selección
 	let nombre = document.querySelector("#inputNombre");
@@ -126,6 +135,8 @@ function btnGuardar(e) {
 				revision1.push(e.value);
 			});
 
+
+
 			// Comprobar diagnóstico
 			diagnostico = document.querySelector("#textarea").value;
 			if (textarea.value === "") {
@@ -135,11 +146,12 @@ function btnGuardar(e) {
 				let nombre = document.querySelector("#inputNombre");
 				let index = animals.findIndex(animal => animal.name === nombre.value);
 
-				if (raza.length != 0 && sexo != "" && peso != "" && diagnostico.length != 0 && revision2.length != 0) {
+				if (raza.length != 0 && sexo != "" && peso != "" && diagnostico.length != 0 && revision2.length != 0 && revision1.length != 0 && oidos2.length != 0) {
 					animals[index].raza = raza;
 					animals[index].sexo = sexo;
 					animals[index].peso = peso;
 					animals[index].diagnostico = diagnostico;
+					animals[index].revision1 = revision1;
 					animals[index].revision2 = revision2;
 				}
 
