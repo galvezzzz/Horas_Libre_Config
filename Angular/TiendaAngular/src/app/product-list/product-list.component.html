@@ -12,6 +12,10 @@
 		Description: {{ product.description }}
 	</p>
 
+	<p *ngIf="product.fabrication">
+		Fabrication: {{ product.fabrication }}
+	</p>
+
 	<button type="button" (click)="share()">
 		Share
 	</button>
