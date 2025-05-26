@@ -35,7 +35,7 @@ function btnEditar(index) {
 	// Seleccionar la nueva fila y marcarla
 	filaSeleccionada = document.querySelector(`#row${index}`);
 	filaSeleccionada.classList.add("table-success");
-
+	
 	// Mandar datos al form
 	let inputNombre = document.querySelector("#inputNombre");
 	inputNombre.value = animals[index].name;
