@@ -4,6 +4,8 @@ import { NgFor } from '@angular/common';
 import { NgIf } from '@angular/common';
 import { ProductAlertsComponent } from '../product-alerts/product-alerts.component';
 import { RouterLink } from '@angular/router';
+import { Provider } from '@angular/core';
+import { providers } from '../provider';
 
 @Component({
   selector: 'app-product-list',
@@ -14,6 +16,7 @@ import { RouterLink } from '@angular/router';
 
 export class ProductListComponent {
 
+  providers = [...providers];
   products = [...products];
 
   share() {

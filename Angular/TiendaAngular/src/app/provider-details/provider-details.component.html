@@ -1,0 +1,9 @@
+<h2>Provider Details</h2>
+
+<div *ngIf="provider">
+    <h3>ID: {{ provider.id }}</h3>
+    <p>Name: {{ provider.name }}</p>
+    <h4>Adress: {{ provider.address }}</h4>
+    <p>Description: {{ provider.description }}</p>
+    <p>Shop name: {{ provider?.shopName }}</p>
+</div>

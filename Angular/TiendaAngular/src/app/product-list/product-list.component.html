@@ -12,8 +12,10 @@
 		Description: {{ product.description }}
 	</p>
 
-	<p *ngIf="product.fabrication">
-		Fabrication: {{ product.fabrication }}
+	<p *ngIf="product.provider">
+		<a [title]="product.provider + ' details'" [routerLink]="['/providers', product.provider]">
+			Provider: {{ product.provider }}
+		</a>
 	</p>
 
 	<button type="button" (click)="share()">
