@@ -1,5 +1,5 @@
-export interface Provider{
-    id: string;
+export interface Provider {
+    id: number;
     name: string;
     address: string;
     description: string;
@@ -8,13 +8,13 @@ export interface Provider{
 
 export const providers: Provider[] = [
     {
-        id: '1',
+        id: 1,
         name: 'Apple',
         address: 'Calle Amarguillo',
         description: 'Proveedor de productos de Apple',
     },
     {
-        id: '2',
+        id: 2,
         name: 'Samsung',
         address: 'Calle Héroe de Sostoa',
         description: 'Proveedor de productos de Samsung',

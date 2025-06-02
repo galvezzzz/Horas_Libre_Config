@@ -5,6 +5,7 @@ import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housinglocation';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { propiedades } from '../propiedades';
 
 @Component({
   selector: 'app-details',

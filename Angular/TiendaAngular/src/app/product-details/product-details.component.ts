@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { Product, products } from '../products';
 import { CartService } from '../cart.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
