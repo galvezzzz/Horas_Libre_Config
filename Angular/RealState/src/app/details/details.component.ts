@@ -5,11 +5,11 @@ import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housinglocation';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { propiedades } from '../propiedades';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-details',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgIf],
   template: `
   <article>
     <img class="listing-photo" [src]="housingLocation?.photo"
@@ -24,9 +24,14 @@ import { propiedades } from '../propiedades';
         <li>Units available: {{housingLocation?.availableUnits}}</li>
         <li>Does this location have wifi: {{housingLocation?.wifi}}</li>
         <li>Does this location have laundry: {{housingLocation?.laundry}}</li>
+        <li *ngIf="housingLocation?.alarmas">Does this location have alarms: {{housingLocation?.alarmas}}</li>
+        <li *ngIf="housingLocation?.camaras">Does this location have cameras: {{housingLocation?.camaras}}</li>
+        <li *ngIf="housingLocation?.puertasReforzadas">Does this location have reinforced doors: {{housingLocation?.puertasReforzadas}}</li>
+        <li *ngIf="housingLocation?.detectoresHumo">Does this location have smoke detectors: {{housingLocation?.detectoresHumo}}</li>
+        <li>Status: {{housingLocation?.status}}</li>
       </ul>
     </section>
-    <section class="listing-apply">
+    <section *ngIf="housingLocation?.status === 'Disponible'" class="listing-apply">
       <h2 class="section-heading">Apply now to live here</h2>
       <form [formGroup]="applyForm" (submit)="submitApplication()">
         <label for="first-name">First Name</label>
