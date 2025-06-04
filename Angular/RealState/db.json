@@ -43,7 +43,7 @@
             "camaras": false,
             "puertasReforzadas": true,
             "detectoresHumo": true,
-            "status": "Disponible"
+            "status": "Reservado"
         },
         {
             "id": 3,
@@ -58,7 +58,7 @@
             "camaras": false,
             "puertasReforzadas": false,
             "detectoresHumo": true,
-            "status": "Disponible"
+            "status": "Alquilado"
         },
         {
             "id": 4,
