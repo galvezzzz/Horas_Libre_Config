@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+<body>
+	<h1>Estudiantes</h1>
+	<button id="btnMostrar">Mostrar estudiantes</button>
+	<p id="estudiantes"></p>
+	<div>
+		<p>
+			Filtrar por:
+			<select required id="filtrar">
+				<option id="nombre" value="nombre">Nombre</option>
+				<option id="edad" value="edad">Edad</option>
+				<option id="curso" value="curso">Curso</option>
+			</select>
+			<input id="inputValue" type="text">
+			<button id="btnBuscar">Buscar</button>
+		</p>
+		<p id="resultadoBusqueda"></p>
+	</div>
+	<br>
+	<form id="formulario">
+		<h3>Añadir alumno</h3>
+		<p>
+			Nombre: 
+			<input type="text" id="nombreAlumno" required>
+		</p>
+		<p>
+			Edad:
+			<input type="number" id="edadAlumno" required>
+		</p>
+		<p>
+			Curso:
+			<select required id="cursoAlumno">
+				<option id="primero" value="1">1</option>
+				<option id="segundo" value="2">2</option>
+				<option id="tercero" value="3">3</option>
+				<option id="cuarto" value="4">4</option>
+			</select>
+		</p>
+		<h4>
+			Contacto
+		</h4>
+		<p>
+			Email:
+			<input type="email" id="emailAlumno" required>
+		</p>
+		<p>
+			Teléfono:
+			<input type="number" id="telefonoAlumno" required>
+		</p>
+		<p>
+			Fecha:
+			<input type="text" id="fechaAlumno" required>
+		</p>
+		<p>
+			<input type="submit" value="Añadir" id="btnAnyadirAlumno">
+		</p>
+	</form>
+</body>
+<script src="script.js"></script>
+</html>

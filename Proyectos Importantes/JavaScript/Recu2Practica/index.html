@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animales</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+	<div class="row">
+		<div class="col m-5" id="lista">
+			<h1>Animales</h1>
+			<table class="table table-bordered mt-3" id="tabla">
+				<thead>
+					<th>Nombre</th>
+					<th>Especie</th>
+					<th>Gustos</th>
+					<th>No gustos</th>
+					<th>Acción</th>
+				</thead>
+			</table>
+		</div>
+		<div class="col m-5" id="formulario">
+			<h1>Historia Clínica</h1>
+			<form id="form">
+				<div class="mb-3">
+					<input id="inputNombre" type="text" placeholder="Nombre" readonly>
+					<select id="select">
+						<option>--Raza--</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label>Sexo:</label>
+
+					<input type="radio" name="sexo" id="macho" value="Macho">
+					<label>Macho</label>
+
+					<input type="radio" name="sexo" id="hembra" value="Hembra">
+					<label>Hembra</label>
+				</div>
+
+				<div class="mb-3">
+					<input type="text" placeholder="Peso" maxlength="5" id="peso">
+				</div>
+
+				<div class="mb-3">
+					<p><label>Revisión 1:</label></p>
+					<input type="checkbox" id="oidos" name="revision1" value="Oídos">
+					<label>Oídos</label>
+					<input type="checkbox" id="nariz" name="revision1" value="Nariz">
+					<label>Nariz</label>
+					<input type="checkbox" id="boca" name="revision1" value="Boca">
+					<label>Boca/Pico</label>
+					<input type="checkbox" id="ojos" name="revision1" value="Ojos">
+					<label>Ojos</label>
+				</div>
+
+				<div class="mb-3">
+					<p><label>Revisión 2:</label></p>
+					<input type="checkbox" id="oidos2">
+					<label>Oídos</label>
+					<input type="checkbox" id="nariz2">
+					<label>Nariz</label>
+					<input type="checkbox" id="boca2">
+					<label>Boca/Pico</label>
+					<input type="checkbox" id="ojos2">
+					<label>Ojos</label>
+				</div>
+
+				<div class="mb-3">
+					<p>
+						<label>Diagnóstico:</label>
+						<textarea id="textarea"></textarea>
+					</p>
+				</div>
+				<div class="mb-3">
+					<button id="btnGuardar">Guardar</button>
+				</div>
+
+				<div class="mb-3 border" id="jsonText"></div>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="animalsList.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+	integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+</body>
+
+</html>

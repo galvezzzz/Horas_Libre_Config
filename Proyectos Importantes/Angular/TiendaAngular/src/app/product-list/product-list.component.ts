@@ -15,6 +15,8 @@ import { providers } from '../provider';
 })
 
 export class ProductListComponent {
+
+  providers = [...providers];
   products = [...products];
 
   share() {

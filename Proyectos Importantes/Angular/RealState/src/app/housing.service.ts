@@ -10,7 +10,6 @@ import { Component, inject } from '@angular/core';
 export class HousingService {
   housingLocation!: HousingLocation;
 
-
   url = 'http://localhost:3000/locations';
   private casasDisponibles = new BehaviorSubject<number>(0);
   casasDisponibles$ = this.casasDisponibles.asObservable();

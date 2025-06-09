@@ -11,7 +11,6 @@ import { NgIf } from '@angular/common';
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
 })
-
 export class TopBarComponent implements OnInit {
   contCarrito: number = 0;
 
