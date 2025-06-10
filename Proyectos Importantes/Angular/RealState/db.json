@@ -13,7 +13,10 @@
             "camaras": true,
             "puertasReforzadas": true,
             "detectoresHumo": true,
-            "status": "Disponible"
+            "status": "Disponible",
+            "bath": 1,
+            "dateOfBuilding":"1982",
+            "elevator": true
         },
         {
             "id": 1,
@@ -28,7 +31,9 @@
             "camaras": true,
             "puertasReforzadas": true,
             "detectoresHumo": false,
-            "status": "Disponible"
+            "status": "Disponible",
+            "bath": 4,
+            "dateOfBuilding":"2022"
         },
         {
             "id": 2,
@@ -43,7 +48,10 @@
             "camaras": false,
             "puertasReforzadas": true,
             "detectoresHumo": true,
-            "status": "Reservado"
+            "status": "Reservado",
+            "bath": 3,
+            "dateOfBuilding":"2023",
+            "elevator": true
         },
         {
             "id": 3,
@@ -58,7 +66,9 @@
             "camaras": false,
             "puertasReforzadas": false,
             "detectoresHumo": true,
-            "status": "Alquilado"
+            "status": "Alquilado",
+            "bath": 2,
+            "dateOfBuilding":"2012"
         },
         {
             "id": 4,
@@ -68,7 +78,10 @@
             "photo": "https://angular.io/assets/images/tutorials/faa/krzysztof-hepner-978RAXoXnH4-unsplash.jpg",
             "availableUnits": 1,
             "wifi": true,
-            "laundry": false
+            "laundry": false,
+            "bath": 5,
+            "dateOfBuilding":"2010",
+            "elevator": true
         },
         {
             "id": 5,
@@ -78,7 +91,10 @@
             "photo": "https://angular.io/assets/images/tutorials/faa/r-architecture-JvQ0Q5IkeMM-unsplash.jpg",
             "availableUnits": 2,
             "wifi": true,
-            "laundry": true
+            "laundry": true,
+            "bath": 1,
+            "dateOfBuilding":"1999",
+            "elevator": true
         },
         {
             "id": 6,
@@ -88,7 +104,9 @@
             "photo": "https://angular.io/assets/images/tutorials/faa/phil-hearing-IYfp2Ixe9nM-unsplash.jpg",
             "availableUnits": 5,
             "wifi": true,
-            "laundry": true
+            "laundry": true,
+            "bath": 2,
+            "dateOfBuilding":"2025"
         },
         {
             "id": 7,
@@ -98,7 +116,10 @@
             "photo": "https://angular.io/assets/images/tutorials/faa/r-architecture-GGupkreKwxA-unsplash.jpg",
             "availableUnits": 2,
             "wifi": true,
-            "laundry": true
+            "laundry": true,
+            "bath": 3,
+            "dateOfBuilding":"1940",
+            "elevator": true
         },
         {
             "id": 8,
@@ -108,7 +129,10 @@
             "photo": "https://angular.io/assets/images/tutorials/faa/saru-robert-9rP3mxf8qWI-unsplash.jpg",
             "availableUnits": 10,
             "wifi": false,
-            "laundry": false
+            "laundry": false,
+            "bath": 1,
+            "dateOfBuilding":"2002",
+            "elevator": false
         },
         {
             "id": 9,
@@ -118,7 +142,10 @@
             "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
             "availableUnits": 6,
             "wifi": true,
-            "laundry": true
+            "laundry": true,
+            "bath": 4,
+            "dateOfBuilding":"2000"
+            
         }
     ]
 }

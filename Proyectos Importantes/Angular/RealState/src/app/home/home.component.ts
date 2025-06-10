@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { HousingLocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
+import { BathComponent } from '../bath/bath.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,9 @@ import { HousingService } from '../housing.service';
       <form>
         <input type="text" placeholder="Filter by city" #filter>
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+        <br><br>
+        <input type="number" placeholder="Filter by baths" #filter2>
+        <button class="primary" type="button" (click)="filterBaths(filter2.value)">Filter baths</button>
       </form>
     </section>
     <section class="results">
@@ -38,6 +42,7 @@ export class HomeComponent {
       this.filteredLocationList = housingLocationList;
     });
   }
+
   filterResults(text: string) {
     if (!text) {
       this.filteredLocationList = this.housingLocationList;
@@ -46,6 +51,21 @@ export class HomeComponent {
 
     this.filteredLocationList = this.housingLocationList.filter(
       housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+    );
+  }
+
+  filterBaths(number: string) {
+    let numero;
+
+    numero = parseInt(number);
+
+    if (!number) {
+      this.filteredLocationList = this.housingLocationList;
+      return;
+    }
+
+    this.filteredLocationList = this.housingLocationList.filter(
+      housingLocation => housingLocation.bath === numero
     );
   }
 }

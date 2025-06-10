@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+
+<body>
+
+    <h1>Alberto Gálvez Gómez</h1>
+
+    <h3>Series</h3>
+
+    <table id="tabla">
+        <thead>
+            <th>Título</th>
+            <th>Año</th>
+            <th>Temporadas</th>
+        </thead>
+    </table>
+
+    <h3>Ordenar</h3>
+
+    <div>
+        <p>
+            Ordenar por:
+            <select required id="ordenar">
+                <option id="titulo" value="titulo">Título</option>
+                <option id="año" value="año">Año</option>
+            </select>
+            <button id="btnOrdenar">Buscar</button>
+
+        <table id="tabla2">
+            <thead>
+                <th>Título</th>
+                <th>Año</th>
+                <th>Temporadas</th>
+            </thead>
+        </table>
+        </p>
+    </div>
+
+    <h3>Filtrar</h3>
+
+    <div>
+        <p>
+            Filtrar por:
+            <select required id="filtrar">
+                <option id="titulo" value="titulo">Título</option>
+                <option id="clasificacion" value="clasificacion">Clasificacion</option>
+            </select>
+            <input id="inputValue" type="text">
+            <button id="btnFiltrar">Filtrar</button>
+        </p>
+        <p id="resultadoBusqueda"></p>
+    </div>
+
+    <form id="formulario">
+        <h3>Añadir serie</h3>
+        <p>
+            Título:
+            <input type="text" id="anyadirTitulo" required>
+        </p>
+        <p>
+            Año:
+            <input type="number" id="anyadirAnyo" required>
+        </p>
+        <p>
+            Temporadas:
+            <input type="number" id="anyadirTemporadas" required>
+        </p>
+        <p>
+            Género:
+            <input type="checkbox" id="fantasia" name="genero" value="Fantasía">
+            <label>Fantasía</label>
+            <input type="checkbox" id="romance" name="genero" value="Romance">
+            <label>Romance</label>
+            <input type="checkbox" id="misterio" name="genero" value="Misterio">
+            <label>Misterio</label>
+            <input type="checkbox" id="drama" name="genero" value="Drama">
+            <label>Drama</label>
+        </p>
+        <p>
+            Clasificación:
+            <input type="radio" name="tv" id="14" value="TV-14" required>
+            <label>TV-14</label>
+
+            <input type="radio" name="tv" id="ma" value="TV-MA" required>
+            <label>TV-MA</label>
+        </p>
+        <p>
+            <input type="submit" value="Añadir" id="btnAnyadirSerie">
+        </p>
+    </form>
+</body>
+<script src="pelisnet.js"></script>
+<script src="script.js"></script>
+
+</html>

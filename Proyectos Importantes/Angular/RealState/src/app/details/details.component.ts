@@ -29,6 +29,9 @@ import { NgIf } from '@angular/common';
         <li *ngIf="housingLocation?.puertasReforzadas">Does this location have reinforced doors: {{housingLocation?.puertasReforzadas}}</li>
         <li *ngIf="housingLocation?.detectoresHumo">Does this location have smoke detectors: {{housingLocation?.detectoresHumo}}</li>
         <li>Status: {{housingLocation?.status}}</li>
+        <li *ngIf="housingLocation?.bath">Number of baths: {{housingLocation?.bath}}</li>
+        <li *ngIf="housingLocation?.dateOfBuilding">Date of building: {{housingLocation?.dateOfBuilding}}</li>
+        <li *ngIf="housingLocation?.elevator">Does this location have elevator: {{housingLocation?.elevator}}</li>
       </ul>
     </section>
     <section *ngIf="housingLocation?.status === 'Disponible'" class="listing-apply">

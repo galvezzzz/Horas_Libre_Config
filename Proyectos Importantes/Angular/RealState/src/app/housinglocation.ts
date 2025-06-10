@@ -12,4 +12,7 @@ export interface HousingLocation {
   puertasReforzadas?: boolean;
   detectoresHumo?: boolean;
   status?: string;
+  bath: number;
+  dateOfBuilding: string;
+  elevator?: boolean;
 }
